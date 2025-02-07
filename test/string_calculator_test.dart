@@ -17,4 +17,8 @@ void main() {
   test('Any amount of numbers should return their sum', () {
     expect(add('1,2,3,4,5'), 15);
   });
+
+  test('New lines between numbers should be handled', () {
+    expect(add('1\n2,3'), 6);
+  });
 }
