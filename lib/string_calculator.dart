@@ -10,5 +10,9 @@ int add(String numbers) {
   }
   var nums =
       numbers.split(RegExp('[$delimiter\n]')).map((n) => int.parse(n)).toList();
+  var negatives = nums.where((n) => n < 0).toList();
+  if (negatives.isNotEmpty) {
+    throw Exception('Negative numbers not allowed: ${negatives.join(',')}');
+  }
   return nums.reduce((sum, n) => sum + n);
 }
