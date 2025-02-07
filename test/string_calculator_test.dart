@@ -21,4 +21,8 @@ void main() {
   test('New lines between numbers should be handled', () {
     expect(add('1\n2,3'), 6);
   });
+
+  test('Custom delimiter should be supported', () {
+    expect(add('//;\n1;2'), 3);
+  });
 }
